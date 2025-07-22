@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Gateway System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://js.stripe.com/v3/"></script>
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">PayGate</div>
+        <div class="nav-links">
+            <a href="#" class="active">Home</a>
+            <a href="#payments">Payments</a>
+            <a href="#history">History</a>
+            <a href="#" id="loginBtn" class="auth-btn">Login</a>
+            <a href="#" id="registerBtn" class="auth-btn">Register</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <h1>Secure Payment Gateway Solution</h1>
+            <p>Process payments securely and efficiently with our advanced payment gateway system</p>
+        </section>
+
+        <section id="payments" class="payment-section">
+            <h2 style="margin-left:28rem;">Make a Payment</h2>
+            <div class="payment-form">
+                <form id="paymentForm">
+                    <div class="form-group">
+                        <label for="amount">Amount</label>
+                        <input type="number" id="amount" required min="1" step="0.01">
+                    </div>
+                    <div class="form-group">
+                       <label>Card Details</label>
+                         <div id="card-element" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;"></div>
+                   </div>
+
+                  
+                    <button type="submit" class="btn-primary">Process Payment</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="history" class="history-section">
+            <h2>Transaction History</h2>
+            <div class="transaction-list">
+                <!-- Transactions will be dynamically populated here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Register</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="regName">Full Name</label>
+                    <input type="text" id="regName" required>
+                </div>
+                <div class="form-group">
+                    <label for="regEmail">Email</label>
+                    <input type="email" id="regEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="regPassword">Password</label>
+                    <input type="password" id="regPassword" required>
+                </div>
+                <button type="submit" class="btn-primary">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 PayGate. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
